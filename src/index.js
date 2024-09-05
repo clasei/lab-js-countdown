@@ -20,10 +20,26 @@ startBtnNode.addEventListener("click", () => {
 
 // ITERATION 2: Start Countdown
 function startCountdown() {
-  console.log("startCountdown called!");
+  console.log("startCountdown called!")
+
+  let count = 10
+
+  const intervalIdLab = setInterval(() => {
+
+    count--
+    console.log(count)
+
+    if (count === 0) {
+
+      clearInterval(intervalIdLab)
+      console.log("countdown stops")
+
+    }
+
+  }, 1000)
 
 
-  // Your code goes here ...
+
 }
 
 
