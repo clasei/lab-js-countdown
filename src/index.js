@@ -6,46 +6,39 @@ let timer = null; // Variable to store the interval
 
 // ITERATION 1: Add event listener to the start button
 
-const startBtnNode = document.querySelector("#start-btn")
+const startBtnNode = document.querySelector("#start-btn");
 
 startBtnNode.addEventListener("click", () => {
-
-  startCountdown()
-  console.log("countdown-click")
-
-})
-
-
-
+  startCountdown();
+});
 
 // ITERATION 2: Start Countdown
+
+const timeDisplayNode = document.querySelector("#time")
+
 function startCountdown() {
-  console.log("startCountdown called!")
+  console.log("startCountdown called!");
 
-  // let count = 10
+  const disabledStartBtnNode = (document.querySelector("#start-btn").disabled = true);
 
-  const disabledStartBtnNode = document.querySelector("#start-btn").disabled = true
+  
 
   timer = setInterval(() => {
+    remainingTime--;
+    console.log(remainingTime);
 
-    remainingTime--
-    console.log(remainingTime)
+    timeDisplayNode.innerText = remainingTime
 
     if (remainingTime > 0) {
-      disabledStartBtnNode
+      disabledStartBtnNode;
     }
 
-    if (remainingTime === 0) {
-
-      clearInterval(timer)
-      console.log("countdown stops")
-
+    if (remainingTime <= 0) {
+      clearInterval(timer);
+      console.log("countdown stops");
+      showToast()
     }
-
-  }, 1000)
-
-
-
+  }, 1000);
 }
 
 
