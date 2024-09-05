@@ -22,16 +22,22 @@ startBtnNode.addEventListener("click", () => {
 function startCountdown() {
   console.log("startCountdown called!")
 
-  let count = 10
+  // let count = 10
 
-  const intervalIdLab = setInterval(() => {
+  const disabledStartBtnNode = document.querySelector("#start-btn").disabled = true
 
-    count--
-    console.log(count)
+  timer = setInterval(() => {
 
-    if (count === 0) {
+    remainingTime--
+    console.log(remainingTime)
 
-      clearInterval(intervalIdLab)
+    if (remainingTime > 0) {
+      disabledStartBtnNode
+    }
+
+    if (remainingTime === 0) {
+
+      clearInterval(timer)
       console.log("countdown stops")
 
     }
