@@ -12,6 +12,8 @@ startBtnNode.addEventListener("click", () => {
   startCountdown();
 });
 
+
+
 // ITERATION 2: Start Countdown
 
 const timeDisplayNode = document.querySelector("#time")
@@ -43,13 +45,11 @@ function startCountdown() {
 
 
 
-
 // ITERATION 3: Show Toast
 function showToast(message) {
   console.log("showToast called!");
 
   // Your code goes here ...
-
 
 
 
